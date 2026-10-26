@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mingchan Liang | Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: #222;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+    header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.96);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+header.site-header nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+header.site-header nav::-webkit-scrollbar {
+    display: none;
+}
+
+header.site-header nav a {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    padding: 0 16px;
+    color: #9ca3af;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header.site-header nav a:hover {
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+header.site-header nav a.active {
+    color: #ffffff;
+    background: #0b3a66;
+    font-weight: 600;
+}
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Hero section with avatar */
+        .hero {
+            padding: 40px 0 50px;
+            display: grid;
+            grid-template-columns: 1fr 180px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 34px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: 17px;
+            color: #475569;
+            max-width: 720px;
+        }
+
+        .hero-avatar {
+            text-align: center;
+        }
+
+        .hero-avatar img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e2e8f0;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        section {
+            margin: 64px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 19px;
+            margin: 28px 0 12px;
+            color: #1e293b;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: #334155;
+        }
+
+header.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 100;
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 24px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: #cbd5e1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding-left: 24px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0369a1;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 2px #0369a1;
+        }
+
+        .timeline-date {
+            font-size: 14px;
+            color: #0369a1;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 17px;
+            color: #0f172a;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-subtitle {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: #475569;
+            max-width: 720px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+.project-methods {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 20px;
+}
+
+.methods-label {
+    margin-right: 2px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.method-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #eef4ff;
+    color: #1e3a8a;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+        .figure-box {
+            margin: 18px 0;
+        }
+
+        .figure-box img {
+            max-width: 100%;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .fig-caption {
+            font-size: 14px;
+            color: #475569;
+            margin-top: 8px;
+        }
+
+        ul.pub-list {
+            padding-left: 22px;
+        }
+
+        ul.pub-list li {
+            margin-bottom: 14px;
+            color: #334155;
+        }
+
+       a.doi-link {
+    color: #0369a1;
+    white-space: nowrap;
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip-ink: none;
+}
+
+        footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* Mobile adaptation */
+        @media (max-width: 720px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-avatar {
+                order: -1;
+            }
+
+            .hero-avatar img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education & Experience</a>
+        <a href="#vision">Research Vision</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+    <div class="container">
+        <!-- Hero with avatar -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Mingchan Liang</h1>
+                <div class="hero-subtitle">
+                    My research focuses on biological activity evaluation and in vitro bioanalytical assay development for vaccines and therapeutic monoclonal antibodies. I aim to build bioanalytical platforms that predict in vivo protective outcomes and support non-animal potency testing under the 3Rs principle.
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <!-- 建议替换为你的头像图片路径，例如 "./avatar.png" -->
+                <img src="photo.jpg" alt="Mingchan Liang avatar">
+            </div>
+        </div>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a researcher trained in biochemistry, molecular biology, and chemical proteomics, with a focus on mechanism-based bioactivity assays for vaccines and therapeutic monoclonal antibodies. My central interest is how in vitro readouts can be made both biologically predictive and analytically robust enough for regulated use.</p>
+
+            <p>The COVID-19 pandemic sparked my interest in vaccine-related public health challenges. My earlier training in chemical proteomics gave me a solid foundation in molecular quantification, sample handling, and bioinformatics. During my master’s research, I led the development and full analytical validation of two IC-ELISA assays for an MVA-based mpox vaccine—from recombinant antigen production and hybridoma generation to monoclonal antibody selection, assay optimization, and testing of vaccine batches. My study revealed strong correlations between antigen-specific in vitro readouts and in vivo immune responses in mice, supporting the feasibility of non-animal potency testing under the 3Rs principles.</p>
+
+            <p>I now work at the interface between assay development and industrial QC, where I develop, validate, and transfer mechanism-based bioactivity methods for therapeutic mAbs, including ADCC, CDC, and cell proliferation inhibition assays. This experience showed me that the key challenge is not only whether an in vitro assay correlates with in vivo efficacy, but also whether it remains sensitive, reproducible, and transferable enough for routine quality monitoring.</p>
+
+            <p>For my PhD, I aim to move beyond optimizing individual assays toward understanding the design principles that make in vitro potency assays predictive and robust. I am seeking training in pharmaceutical sciences, immunology, biomedical engineering, or vaccine/antibody research.</p>
+        </section>
+
+        <!-- New Timeline Section -->
+        <section id="education">
+            <h2>Education & Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2016–2020</div>
+                    <div class="timeline-title">Guangdong Pharmaceutical University</div>
+                    <div class="timeline-subtitle">B.S. in Health Inspection and Quarantine</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2020–2022</div>
+                    <div class="timeline-title">Shenzhen Bay Laboratory</div>
+                    <div class="timeline-subtitle">Research Assistant</div>
+                    <div class="timeline-desc">
+                        Mass Spectrometry-Based Chemical Proteomics
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2022–2025</div>
+                    <div class="timeline-title">Shanghai Institute of Biological Products</div>
+                    <div class="timeline-subtitle">M.S. in Biochemistry and Molecular Biology</div>
+                    <div class="timeline-desc">
+                        Mpox Vaccine R&D Team
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025–Present</div>
+                    <div class="timeline-title">Shanghai Institute of Biological Products</div>
+                    <div class="timeline-subtitle">Quality Control Scientist</div>
+                    <div class="timeline-desc">
+                        Biological Potency Assay of Monoclonal Antibodies
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision">
+            <h2>Research Vision</h2>
+            <p>Vaccine potency testing still heavily relies on variable, costly in vivo animal assays, conflicting with the 3Rs principle, while regulatory authorities keep promoting in vitro alternatives. For therapeutic mAbs, biological activity represents a critical quality attribute distinct from small-molecule drugs. Nevertheless, a major bottleneck remains: it is challenging to establish well-validated, robust correlations between in vitro functional readouts and real in vivo protective or therapeutic outcomes, limiting broader adoption of non-animal assays.</p>
+
+            <p>My PhD-level research will center on two connected goals:</p>
+            <p>1. Develop high-throughput in vitro functional assay platforms to enable partial replacement of traditional animal-based potency tests.</p>
+            <p>2. Identify and mechanistically validate functional biomarkers capable of predicting in vivo protective or therapeutic effects.</p>
+
+            <p>Beyond merely building testing kits, I intend to embed immunological mechanistic insights into assay design. My objective is to deliver robust, standardizable bioactivity evaluation systems with translational potential to support pre-clinical assessment of vaccine and antibody candidates.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Projects</h2>
+
+            <div class="project-card">
+                <h3>Project 1｜Development of IC-ELISA assays for quantifying cross-protective antigens of MVA mpox vaccine</h3>
+                <p><em>Mingchan Liang et al. Journal of Virological Methods, 2025</em> &nbsp;
+                <a class="doi-link" href="https://doi.org/10.1016/j.jviromet.2025.115204" target="_blank">DOI: 10.1016/j.jviromet.2025.115204</a></p>
+
+<div class="project-methods" aria-label="Methods">
+    <span class="methods-label">Methods</span>
+    <span class="method-pill">IC-ELISA</span>
+    <span class="method-pill">Virus neutralization</span>
+    <span class="method-pill">Hybridoma technology</span>
+    <span class="method-pill">Mouse immunization</span>
+</div>
+
+                <p><strong>Project Overview</strong><br>
+                Modified vaccinia virus Ankara (MVA) is a promising third-generation mpox vaccine candidate. Conventional potency evaluation largely depends on in vivo animal assays with high variability, high cost and ethical concerns; some neutralization assays additionally require BSL-3 containment. To address this gap, two indirect competitive IC-ELISA assays were established for specific quantification of L1 and A33, two key cross-protective antigens in MVA vaccine.</p>
+
+                <p><strong>My Contributions</strong><br>
+                I contributed to study conceptualization and led the development and analytical validation of both assays. I produced recombinant M1 and A35 antigens in Expi293F cells and purified them by Ni-NTA affinity chromatography; performed mouse immunization, generated hybridomas, and screened target-specific mAbs. I selected two neutralizing mAbs, 5G9 and 16B8 (binding EC50 = 51.27 and 40.82 ng/mL; neutralizing IC50 &lt; 100 µg/mL), and optimized the assay conditions by checkerboard titration. I then completed analytical validation, including specificity, accuracy/recovery, intra- and inter-assay precision, robustness, linearity, and LOD. I evaluated six batches (three consecutive high-dose and three consecutive low-dose) for batch consistency and 18 batches for correlation analysis, and used Spearman analysis to compare antigen content with TCID50 viral titer, MPXV cross-reactive IgG, and MVA neutralizing antibody titers in immunized mice.</p>
+
+                <p><strong>Key Outcomes</strong><br>
+                The two IC-ELISAs showed good linear ranges, with LOD of 48.36 ng/mL for L1 and 3.74 ng/mL for A33. The assays met analytical requirements for vaccine quality control. Strong Spearman correlations were observed between in vitro antigen levels and in vivo immune responses (r > 0.91, p < 0.0001), providing experimental evidence for in vitro potency assessment of MVA vaccines.</p>
+
+                <p><strong>Limitation & Future Perspective</strong><br>
+                These assays correlated with MVA neutralization and MPXV cross-reactive IgG, but they have not yet been validated against MPXV challenge protection. Formal surrogate-endpoint qualification will require MPXV challenge studies and/or MPXV neutralization data, which are constrained by BSL-3 requirements. How to translate observational correlation into rigorously validated predictive markers of protection is the core scientific question I wish to pursue during PhD training.</p>
+
+                <div class="figure-box">
+                    <!-- 建议替换为你的论文结果图路径，例如 "./project1_fig4.png" -->
+                    <img src="ELISA.jpg" alt="Correlation between in vitro antigen readouts and in vivo immune responses">
+                    <div class="fig-caption">Figure 1: Overview of the M1/A35 IC-ELISA workflow and its application to MVA vaccine potency assessment.</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Project 2｜Bioactivity characterization and quality control of therapeutic monoclonal antibodies</h3>
+                <p><em>Industrial QC work</em></p>
+
+<div class="project-methods" aria-label="Methods">
+    <span class="methods-label">Methods</span>
+    <span class="method-pill">Method development/validation/transfer</span>
+    <span class="method-pill">Binding activity assay</span>
+    <span class="method-pill">Cell proliferation inhibition</span>
+    <span class="method-pill">CDC</span>
+    <span class="method-pill">ADCC</span>
+</div>
+
+                <p><strong>Overview</strong><br>
+                Biological activity is the critical quality attribute that distinguishes therapeutic mAbs from small-molecule drugs. Because each mAb has a distinct mechanism of action (MoA), assay selection and development are driven by its specific binding, blockade, signaling, or Fc-mediated effector function rather than by a single generic platform. In QC, these mechanism-based assays support batch release and must remain robust, reproducible, and transferable under pharmacopoeial and GMP requirements.</p>
+
+                <p><strong>My Contributions</strong><br>
+                I perform and support bioactivity testing for multiple mAb products, including ADCC and cell proliferation inhibition assays for trastuzumab, the CDC assay for rituximab, and a HUVEC proliferation inhibition assay for bevacizumab. For new mAb products, I contribute to bioactivity method development, validation, and transfer, as well as SOP drafting and revision. On a routine basis, I perform these assays and support batch release testing under GMP requirements.</p>
+
+                <p><strong>Unmet Challenge</strong><br>
+                A major challenge in this field is the transfer of bioactivity methods from R&amp;D to QC. R&amp;D assays are often optimized for mechanistic insight and flexibility, whereas QC methods must be robust, reproducible, and transferable across instruments, analysts, reagent lots, and laboratories while complying with pharmacopoeial requirements and GMP. The difficulty is not only to develop an assay sensitive enough to detect meaningful changes in product quality, but also to validate it against predefined acceptance criteria so that it remains reliable for routine batch release. </p>
+
+                <div class="figure-box">
+                    <!-- 建议替换为你修改后的单抗机制图路径，例如 "./mab_mechanism.png" -->
+                    <img src="bioactivity2.jpg" alt="Mechanisms of action of therapeutic monoclonal antibodies">
+                    <div class="fig-caption">Figure 2: Mechanisms of action and bioactivity assay examples of monoclonal antibodies. Schematic adapted with modifications from Suzuki M, Kato C, Kato A. <em>J Toxicol Pathol</em>. 2015;28:133-139. Bioactivity testing is designed to match the intended functional mechanism of each mAb, including binding/blockade, signaling modulation, and Fc-mediated effector functions such as ADCC and CDC.</div>
+                </div>
+            </div>
+
+<div class="project-card">
+    <h3>Project 3｜Development and application of novel protein labeling chemoproteomic technology (NSFC project)</h3>
+    <p><em>Collaborative work, National Natural Science Foundation project</em></p>
+
+<div class="project-methods" aria-label="Methods">
+    <span class="methods-label">Methods</span>
+    <span class="method-pill">Sample preparation</span>
+    <span class="method-pill">LC-MS/MS</span>
+    <span class="method-pill">DIA/DDA analysis</span>
+    <span class="method-pill">Bioinformatics</span>
+</div>
+
+    <p><strong>Project Overview</strong><br>
+Protein post-translational modifications regulate cellular signaling in both temporal and spatial dimensions. This project aimed to develop broadly applicable chemical protein labeling and activity-based protein profiling (ABPP) tools for endogenous proteins inside live cells, which enables capture and identification of reactive amino acid residues within native proteomes. These chemoproteomic and LC-MS workflows provide foundational technical capacity for quantitative protein analysis.</p>
+
+    <p><strong>My Contributions</strong><br>
+I participated in the development of a novel pyridinium-based labeling strategy for lysine-selective modification and live-cell ABPP profiling. My work included reactive amino-acid site classification, probe incubation and labeling workflow optimization, proteomic sample preparation, LC-MS/MS data acquisition and preliminary data interpretation. This platform supports rapid covalent tagging of endogenous proteins in intact live cells, for profiling functionally reactive residues.
+        <a class="doi-link" href="https://doi.org/10.1021/acs.analchem.1c05129" target="_blank" rel="noopener noreferrer">(Anal. Chem. 2022, 94, 10, 4366)</a>；
+        <a class="doi-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10988577/" target="_blank" rel="noopener noreferrer">(Chem Sci. 2024, 15, 14, 5340)</a>；
+        <a class="doi-link" href="https://doi.org/10.1002/chem.202301624" target="_blank" rel="noopener noreferrer">(Chem. Eur. J. 2023, 29, 62)</a>；
+       <a class="doi-link" href="https://doi.org/10.1021/acschembio.2c00083" target="_blank" rel="noopener noreferrer">(ACS Chem. Biol. 2022, 17, 3, 521)</a>
+    </p>
+
+    <p><strong>Key Outcomes</strong><br>
+This strategy achieved selective lysine labeling in live mammalian cells, compatible with standard activity-based protein profiling pipelines. The wet-lab and bioinformatic skills I built here — proteomic sample handling, mass spectrometry measurement, target-site analysis and statistical interpretation — became my technical foundation for antigen quantification and bioanalytical assay development in vaccine and antibody projects later.</p>
+
+    <p><strong>Link to my core research direction</strong><br>
+Chemoproteomics and MS-based protein characterization equip me to measure antigen abundance, profile protein epitopes, and dissect antibody-antigen interactions. These mass-spec tools can be further integrated into my PhD goal: building in vitro assay platforms to predict in vivo bioactivity and immune responses for biotherapeutics.</p>
+
+    <div class="figure-box">
+        <img src="ABPP.jpg" alt="Workflow of activity-based protein profiling (ABPP)">
+        <div class="fig-caption">Figure 3: General workflow of activity-based protein profiling (ABPP). Schematic adapted from Tamura T. et al. J Am Chem Soc. 141, 2782–2799 (2019).</div>
+    </div>
+</div>
+        </section>
+
+<section id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+        <li><strong>Liang M</strong>, Gao F, Liu M, et al. IC‑ELISAs for the quantitative detection of monkeypox virus cross‑immunogenic modified vaccinia virus Ankara antigens L1 and A33. <em>Journal of Virological Methods</em>. 2025;338:115204. <a class="doi-link" href="https://doi.org/10.1016/j.jviromet.2025.115204" target="_blank">doi:10.1016/j.jviromet.2025.115204</a></li>
+
+        <li><strong>Liang M</strong>, et al. Proteomic profiling of serum extracellular vesicle and particle for lung cancers. <em>Clinical Chemistry</em>. (Co‑first author, under revision)</li>
+
+        <li>Yang Y, <strong>Liang M</strong>, Wang R, He C. Chemical protein synthesis elucidates key modulation mechanism of the tyrosine‑O‑sulfation in inducing strengthened inhibitory activity of hirudin. <em>Chinese Chemical Letters</em>. 2023, 34(5): 107806. <a class="doi-link" href="https://doi.org/10.1016/j.cclet.2022.107806" target="_blank">doi:10.1016/j.cclet.2022.107806</a></li>
+
+        <li>Wan C, Yang D, Song C, <strong>Liang M</strong>, An Y, Lian C, Dai C, Ye Y, Yin F, Wang R, Li Z. A pyridinium‑based strategy for lysine‑selective protein modification and chemoproteomic profiling in live cells. <em>Chemical Science</em>. 2024;15(14):5340‑5348. <a class="doi-link" href="https://doi.org/10.1039/d3sc05766f" target="_blank">doi:10.1039/d3sc05766f</a></li>
+
+        <li>Zheng Y, Zhang T, Song J, <strong>Liang M</strong>, Liu Y, Xu Z, He C, Guo Z. Development of a Long‑Acting Myeloid‑Derived Growth Factor via Site‑Specific PEGylation. <em>Bioconjugate Chemistry</em>. 2025;36(5):993‑1003. <a class="doi-link" href="https://doi.org/10.1021/acs.bioconjchem.5c00026" target="_blank">doi:10.1021/acs.bioconjchem.5c00026</a></li>
+    </ul>
+</section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: liangmingchan@126.com</p>
+        </section>
+    </div>
+
+    <footer>
+        © 2026 Mingchan Liang | Personal Research Portfolio
+    </footer>
+
+<script>
+// 获取所有导航链接 + 对应区块
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav a");
+
+function highlightNav() {
+  let current = sections.length ? sections[0].id : "";
+  const activationLine = Math.max(180, window.innerHeight * 0.3);
+  sections.forEach((sec) => {
+    const sectionTop = sec.offsetTop;
+    const sectionHeight = sec.offsetHeight;
+    // 偏移量，微调：滚动到区块上方一点就触发高亮，视觉更舒服
+    if (window.scrollY >= sectionTop - 90) {
+      current = sec.getAttribute("id");
+    }
+  });
+
+// 滚动到页面最底部时，确保最后一项高亮
+  if (
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 2
+  ) {
+    current = sections[sections.length - 1]?.id || current;
+  }
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if(link.getAttribute("href") === "#" + current){
+      link.classList.add("active");
+    }
+  });
+}
+
+// 滚动时触发
+window.addEventListener("scroll", highlightNav);
+// 页面加载完成先跑一次，初始化高亮
+window.addEventListener("load", highlightNav);
+</script>
+<script>
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+</body>
+</html>
